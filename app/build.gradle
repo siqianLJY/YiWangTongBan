@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.3"
+    defaultConfig {
+        applicationId "com.example.litianci.yiwangtongban"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.itextpdf:itextg:5.5.10'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/SerialPort.jar')
+    compile files('libs/gson-2.2.1.jar')
+    compile files('libs/universal-image-loader-1.9.3-with-sources.jar')
+    compile project(path: ':MultiReaderLib')
+    compile files('libs/arcsoft_liveness.jar')
+    compile files('libs/libIdCardVeri.jar')
+    compile files('libs/sdkapi.jar')
+
+}
